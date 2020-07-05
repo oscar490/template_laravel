@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'dashboard'], function() {
 
-    Route::get('index', 'DasboardController@index');
+    Route::get('index', 'DasboardController@index')
+        ->name('dashboard.index');
 
 });
