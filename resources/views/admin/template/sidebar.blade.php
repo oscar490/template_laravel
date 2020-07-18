@@ -32,7 +32,7 @@
           </li>
           -->
           <li>
-            <a href="{{route('dashboard.index')}}" class='{{isActive('dashboard.index')}}'>
+            <a href="{{route('dashboard.index')}}" class='{{isActive('dashboard.index', 'link_active')}}'>
               <i class="fa fa-book"></i>
               <span>Dashboard</span>
               <!-- <span class="badge badge-pill badge-primary">Beta</span> -->
@@ -40,21 +40,26 @@
           </li>
 
           <!-- Usuarios -->
-          <li class="sidebar-dropdown">
-            <a href="#" class=''>
+         <li class="sidebar-dropdown {{isActive('users.create', 'active')}}">
+            <a href="#" >
               <i class="fa fa-user"></i>
               <span>Usuarios</span>
               <!-- <span class="badge badge-pill badge-warning">New</span> -->
             </a>
-            <div class="sidebar-submenu">
+            <div class="sidebar-submenu" style="display: {{isActive('users.create', 'block')}}">
               <ul>
                 <li>
                   <a href="#">Listar
                     <!-- <span class="badge badge-pill badge-success">Pro</span> -->
                   </a>
                 </li>
+
                 <li>
-                  <a href="#">Crear</a>
+                    <a href="{{route('users.create')}}"
+                        class='{{isActive('users.create', 'active_link')}}'
+                    >
+                        Crear
+                    </a>
                 </li>
 
               </ul>

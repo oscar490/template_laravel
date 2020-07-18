@@ -22,11 +22,14 @@ Route::group(['prefix' => 'gestion'], function() {
 
     //  Dashboard
     Route::group(['prefix' => 'dashboard'], function() {
-    
+
         Route::get('index', 'DasboardController@index')
             ->name('dashboard.index');
-    
+
     });
+
+    //  Usuarios
+    Route::resource('users', 'UserGestionController');
 
 });
 

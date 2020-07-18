@@ -1,8 +1,10 @@
 
-.active {
+.active_link {
     color: #b8bfce !important;
 }
 
-.active i {
+.active_link i,
+a.active_link:before
+{
     color: #16c7ff !important;
 }

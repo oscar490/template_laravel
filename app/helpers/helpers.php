@@ -3,6 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 
-function isActive($route_name) {
-    return (Route::currentRouteName() == $route_name) ? 'active' : '';
+function isActive($route_name, $class) {
+    return (Route::currentRouteName() == $route_name) ? $class : '';
 }
