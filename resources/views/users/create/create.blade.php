@@ -8,6 +8,16 @@
     <h2>Crear usuario</h2>
     <hr>
 
+    @if ($errors->any())
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+    @endif
+
+
+
     <div class="row">
         <div class="col-md-12">
 
@@ -17,12 +27,20 @@
 
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombre</label>
-                        <input type="text" name='nombre' class='form-control'>
+                        <input type="text"
+                            name='name'
+                            class='form-control'
+                            value="{{old('name')}}"
+                        >
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" name='email' class='form-control'>
+                        <input type="email"
+                            name='email'
+                            class='form-control'
+                            value='{{old('email')}}'
+                        >
                     </div>
 
                     <div class="form-group col-md-6">
