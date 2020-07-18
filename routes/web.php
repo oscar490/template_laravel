@@ -17,9 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'dashboard'], function() {
+//  Gestion
+Route::group(['prefix' => 'gestion'], function() {
 
-    Route::get('index', 'DasboardController@index')
-        ->name('dashboard.index');
+    //  Dashboard
+    Route::group(['prefix' => 'dashboard'], function() {
+    
+        Route::get('index', 'DasboardController@index')
+            ->name('dashboard.index');
+    
+    });
 
 });
+
