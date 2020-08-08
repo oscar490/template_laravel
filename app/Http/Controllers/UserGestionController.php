@@ -25,4 +25,10 @@ class UserGestionController extends Controller
 
         return redirect()->back();
     }
+
+    public function index() {
+        $users = User::all();
+
+        return view('users.index.index', ['users' => $users]);
+    }
 }

@@ -40,25 +40,29 @@
           </li>
 
           <!-- Usuarios -->
-         <li class="sidebar-dropdown {{isActive('users.create', 'active')}}">
+         <li class="sidebar-dropdown {{isActive(['users.create', 'users.index'], 'active')}}">
             <a href="#" >
               <i class="fa fa-user"></i>
               <span>Usuarios</span>
               <!-- <span class="badge badge-pill badge-warning">New</span> -->
             </a>
-            <div class="sidebar-submenu" style="display: {{isActive('users.create', 'block')}}">
+            <div class="sidebar-submenu" style="display: {{isActive(['users.create', 'users.index'], 'block')}}">
               <ul>
+
+                <!-- Listar -->
                 <li>
-                  <a href="#">Listar
+                  <a href="{{route('users.index')}}"
+                        class="{{isActive('users.index', 'active_link')}}"
+                    >Listar
                     <!-- <span class="badge badge-pill badge-success">Pro</span> -->
                   </a>
                 </li>
 
+                <!-- Crear -->
                 <li>
                     <a href="{{route('users.create')}}"
                         class='{{isActive('users.create', 'active_link')}}'
-                    >
-                        Crear
+                    >Crear
                     </a>
                 </li>
 

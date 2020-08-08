@@ -46,6 +46,8 @@
 
 @include('admin.template.scripts')
 
+@yield('js')
+
 </body>
 
 </html>
