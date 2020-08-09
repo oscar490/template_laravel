@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Rol;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserGestionController extends Controller
 {
     public function create() {
-        return view('users.create.create');
+        $roles = Rol::all();
+        return view('users.create.create', ['roles' => $roles]);
     }
 
     public function store(Request $request) {
@@ -17,7 +19,10 @@ class UserGestionController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
+            'role_id' => ['required', 'exists:roles,id']
         ]);
+
+
 
         $datos['password'] = Hash::make($datos['password']);
 

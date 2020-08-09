@@ -43,12 +43,14 @@
                         >
                     </div>
 
+                    <!-- Rol -->
                     <div class="form-group col-md-6">
                         <label for="rol">Rol</label>
 
-                        <select class="form-control" name="rol">
-                            <option value='1'>Administrador</option>
-                            <option value='2'>Usuario</option>
+                        <select class="form-control" name="role_id">
+                            @foreach($roles as $rol)
+                                <option value="{{$rol->id}}">{{$rol->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 

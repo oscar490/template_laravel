@@ -3,9 +3,11 @@
 @section('title', 'Usuarios')
 
 @section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" >
+
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
+
 
 @endsection
 
@@ -20,6 +22,7 @@
                   <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
                     <th scope="col">Fecha de creación</th>
                   </tr>
                 </thead>
@@ -29,6 +32,7 @@
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
+                            <td>{{$user->role->name}}</td>
                             <td>{{$user->created_at}}</td>
                       </tr>
                     @endforeach
